@@ -48,6 +48,11 @@ public class UserResource {
                 .body(userService.saveUser(user));  //Return the list of user in the body
     }
 
+    @DeleteMapping("/users/delete/{username}")
+    public void deleteUser(@PathVariable("username") String username) {
+        userService.deleteUserByUsername(username);
+    }
+
     @PostMapping("/role/save")
     public ResponseEntity<Role> saveRole(@RequestBody Role role) {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/role/save").toUriString());

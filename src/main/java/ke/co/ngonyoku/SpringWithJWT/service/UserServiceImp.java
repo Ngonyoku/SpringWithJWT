@@ -83,6 +83,15 @@ public class UserServiceImp implements UserService, UserDetailsService {
     }
 
     @Override
+    public Long deleteUserByUsername(String username) {
+        log.info("Deleting User with username {} ", username);
+        User user = userRepo.findByUsername(username);
+        userRepo.deleteById(user.getId());
+
+        return 0L;
+    }
+
+    @Override
     public List<User> getUsers() {
         log.info("Fetching all users from the database");
         return userRepo.findAll();

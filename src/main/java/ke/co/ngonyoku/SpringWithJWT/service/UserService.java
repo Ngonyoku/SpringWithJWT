@@ -17,6 +17,8 @@ public interface UserService {
 
     User getUser(String username);  //Returns a user with the username provided
 
+    Long deleteUserByUsername(String username);
+
     /*
      * NB: In the real world, DON'T dare to return a List of User
      * Instead, return the data in pages
