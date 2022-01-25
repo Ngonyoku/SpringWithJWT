@@ -43,6 +43,7 @@ public class SpringWithJwtApplication {
             service.addRoleToUser("Matiba", "ROLE_USER");
             service.addRoleToUser("Waithera", "ROLE_MANAGER");
             service.addRoleToUser("Waithera", "ROLE_ADMIN");
+
         };
     }
 }
